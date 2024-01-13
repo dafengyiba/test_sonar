@@ -7,8 +7,13 @@ public class TestServiceImpl implements TestService {
 
 
     @Override
-    public void test1() {
+    public String test1(String aa) {
         System.out.println("this code will be test");
+        if ("aa".equals(aa)){
+            return aa;
+        }else {
+            return "bb";
+        }
     }
 
     @Override

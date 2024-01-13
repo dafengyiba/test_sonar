@@ -1,14 +1,20 @@
 plugins {
 	id 'java'
-	id 'org.springframework.boot' version '3.2.1'
+	id 'jacoco'
+	id 'org.springframework.boot' version "2.5.1"
 	id 'io.spring.dependency-management' version '1.1.4'
+	id "org.sonarqube" version "4.4.1.3373"
 }
 
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'
 
 java {
-	sourceCompatibility = '17'
+	sourceCompatibility = '11'
+}
+
+jacoco {
+	toolVersion = "0.8.8"
 }
 
 configurations {
@@ -21,6 +27,16 @@ repositories {
 	mavenCentral()
 }
 
+sonar {
+	properties {
+		property "sonar.projectKey", "test_project_key"
+		property "sonar.projectName", "test_project"
+		property "sonar.host.url", "http://localhost:9000"
+		property "sonar.token", "sqp_2fe7139ccf79ea65d5ea6574ac8e77a1d650783c"
+
+	}
+}
+
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	compileOnly 'org.projectlombok:lombok'
@@ -31,4 +47,21 @@ dependencies {
 
 tasks.named('test') {
 	useJUnitPlatform()
+}
+
+
+test {
+	// report is always generated after tests run
+	finalizedBy jacocoTestReport
+}
+jacocoTestReport {
+	// tests are required to run before generating the report
+	dependsOn test
+
+	reports {
+		xml.required = true
+		csv.required = true
+		html.required = true
+//		html.outputLocation = layout.buildDirectory.dir('jacocoHtml')
+	}
 }
