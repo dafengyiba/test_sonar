@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.demo.TestS" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-01-13T06:46:27" hostname="lq-deMacBook-Pro.local" time="0.932">
+  <properties/>
+  <testcase name="test()" classname="com.example.demo.TestS" time="0.932"/>
+  <system-out><![CDATA[14:46:26.175 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.demo.TestS]: TestS does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+14:46:26.343 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.demo.DemoApplication for test class com.example.demo.TestS
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.1)
+
+2024-01-13T14:46:26.776+08:00  INFO 43146 --- [    Test worker] com.example.demo.TestS                   : Starting TestS using Java 17.0.8.1 with PID 43146 (started by lq in /Users/lq/Documents/GitHub/bear_classifier_2/test_sonar)
+2024-01-13T14:46:26.780+08:00  INFO 43146 --- [    Test worker] com.example.demo.TestS                   : No active profile set, falling back to 1 default profile: "default"
+2024-01-13T14:46:27.972+08:00  INFO 43146 --- [    Test worker] com.example.demo.TestS                   : Started TestS in 1.478 seconds (process running for 2.892)
+this code will be test
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
